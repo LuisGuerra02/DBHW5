@@ -103,14 +103,16 @@ public class jdbc_db {
    }
 
    // Insert into any table, any values from data passed in as String parameters
-   public void insert(String table, String values) {
+   public Boolean insert(String table, String values) {
       String query = "INSERT into " + table + " values (" + values + ");";
 
       try {
          statement.executeUpdate(query);
       } catch (SQLException e) {
          e.printStackTrace();
+         return false;
       }
+      return true;
    }
 
    // Remove all records and fill them with values for testing

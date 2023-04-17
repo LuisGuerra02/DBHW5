@@ -1,11 +1,10 @@
 <html>
 <body>
-<h3>Enter information the student below:</h3>
+<h3>Enter information the application below:</h3>
 
-<form action="insertStudent.php" method="post">
+<form action="insertApplication.php" method="post">
     STUDENT_ID: <input type="text" name="STUDENT_ID"><br>
-    STUDENT_NAME: <input type="text" name="STUDENT_NAME"><br>
-    MAJOR: <input type="text" name="MAJOR"><br>
+    JOB_ID: <input type="text" name="JOB_ID"><br>
     <input name="submit" type="submit" >
 </form>
 <br><br>
@@ -18,15 +17,14 @@ if (isset($_POST['submit']))
 {
     // replace ' ' with '\ ' in the strings so they are treated as single command line args
     $STUDENT_ID = escapeshellarg($_POST[STUDENT_ID]);
-    $STUDENT_NAME = escapeshellarg($_POST[STUDENT_NAME]);
-    $MAJOR = escapeshellarg($_POST[MAJOR]);
+    $JOB_ID = escapeshellarg($_POST[JOB_ID]);
 
-    $command = 'java -cp .:mysql-connector-java-5.1.40-bin.jar insertStudent ' . $STUDENT_ID . ' ' . $STUDENT_NAME . ' ' . $MAJOR;
+    $command = 'java -cp .:mysql-connector-java-5.1.40-bin.jar insertApplication ' . $STUDENT_ID . ' ' . $JOB_ID;
 
     // remove dangerous characters from command to protect web server
     $escaped_command = escapeshellcmd($command);
     echo "<p>command: $command <p>"; 
-    // run insertStudent.exe
+    // run insertApplication.exe
     system($escaped_command);           
 }
 ?>

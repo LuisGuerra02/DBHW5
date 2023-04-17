@@ -11,7 +11,6 @@ public class insertStudent {
       String Username = "sc133"; // Change to your own username
       String mysqlPassword = "ohfin1Om"; // Change to your own mysql Password
 
-      System.out.println(args[0]);
       // Connect to the database
       jdbc_db myDB = new jdbc_db();
       myDB.connect(Username, mysqlPassword);
