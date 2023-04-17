@@ -1,8 +1,8 @@
 <html>
 <body>
-<h3>Enter information about an item to add to the database:</h3>
+<h3>Enter information the student below:</h3>
 
-<div>
+<!-- <div>
     <b>Suppliers:</b>
     <table>
     <thead>
@@ -34,13 +34,12 @@
     </tr>
     </tbody>
     </table>
-</div>
+</div> -->
 
-<form action="jdbc_insert_item.php" method="post">
-    Name: <input type="text" name="name"><br>
-    Supplier id: <input type="text" name="supplier_id"><br>
-    Quantity: <input type="text" name="quantity"><br>
-    Unit Price: <input type="text" name="unit_price"><br>
+<form action="insertStudent.php" method="post">
+    STUDENT_ID: <input type="text" name="STUDENT_ID"><br>
+    STUDENT_NAME: <input type="text" name="STUDENT_NAME"><br>
+    MAJOR: <input type="text" name="MAJOR"><br>
     <input name="submit" type="submit" >
 </form>
 <br><br>
@@ -52,17 +51,16 @@
 if (isset($_POST['submit'])) 
 {
     // replace ' ' with '\ ' in the strings so they are treated as single command line args
-    $name = escapeshellarg($_POST[name]);
-    $supplier_id = escapeshellarg($_POST[supplier_id]);
-    $quantity = escapeshellarg($_POST[quantity]);
-    $unit_price = escapeshellarg($_POST[unit_price]);
+    $STUDENT_ID = escapeshellarg($_POST[STUDENT_ID]);
+    $STUDENT_NAME = escapeshellarg($_POST[STUDENT_NAME]);
+    $MAJOR = escapeshellarg($_POST[MAJOR]);
 
-    $command = 'java -cp .:mysql-connector-java-5.1.40-bin.jar jdbc_insert_item ' . $name . ' ' . $supplier_id . ' ' . $quantity. ' ' . $unit_price;
+    $command = 'java -cp .:mysql-connector-java-5.1.40-bin.jar insertStudent ' . $STUDENT_ID . ' ' . $STUDENT_NAME . ' ' . $MAJOR;
 
     // remove dangerous characters from command to protect web server
     $escaped_command = escapeshellcmd($command);
     echo "<p>command: $command <p>"; 
-    // run jdbc_insert_item.exe
+    // run insertStudent.exe
     system($escaped_command);           
 }
 ?>
