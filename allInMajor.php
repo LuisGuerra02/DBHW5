@@ -2,7 +2,7 @@
 <body>
 <h3>Enter information the student below:</h3>
 
-<form action="insertStudent.php" method="post">
+<form action="allInMajor.php" method="post">
     MAJOR: <input type="text" name="MAJOR"><br>
     <input name="submit" type="submit" >
 </form>
