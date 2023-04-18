@@ -5,14 +5,15 @@ Once in turing, use:
 3. cd public_html
 4. chmod o+x project_java
 5. cd project_java
-6. chmod a+r insertStudent.php
-7. chmod +w insertStudent.php
-8. chmod a+r insertJob.php
-9. chmod +w insertJob.php
-10. chmod a+r insertApplication.php
-11. chmod +w insertApplication.php
-12. chmod 755 *
-13. ls -l
-14. sh build_jdbc.bash
+chmod a+r insertStudent.php
+chmod +w insertStudent.php
+chmod a+r insertJob.php
+chmod +w insertJob.php
+chmod a+r insertApplication.php
+chmod +w insertApplication.php
+chmod a+r allInMajor.php
+chmod +w allInMajor.php
+chmod 755 *
+sh build_jdbc.bash
 
 Open pages links using http://www.csce.uark.edu/~sc133/project_java/MainPage.html

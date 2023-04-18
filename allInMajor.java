@@ -26,6 +26,7 @@ public class allInMajor {
         StringBuilder builder = new StringBuilder();
         String query1 = "SELECT * from STUDENTS WHERE MAJOR = '" + MAJOR + "'";
         builder.append("<br> " + myDB.query(query1) + "<br>");
+        System.out.println(builder.toString());
 
         myDB.disConnect();
     }
