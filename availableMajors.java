@@ -19,8 +19,18 @@ public class availableMajors {
         // Execute Get
         StringBuilder builder = new StringBuilder();
         String query1 = "SELECT DISTINCT MAJOR from STUDENTS;";
-        builder.append("<select><option> " + myDB.query(query1) + "</option></select>");
-        System.out.println(builder.toString());
+
+        String[] majorParts = myDB.query(query1).split("\n");
+        // System.out.println([0]);majorParts
+        builder.append("<select>");
+        String majorValue = majorParts[0];
+        System.out.println(majorValue);
+        builder.append("<option value=\"" + majorValue + "\">" + majorValue + "</option>");
+
+        // builder.append("<select><option> " + myDB.query(query1) +
+        // "</option></select>");
+        builder.append("</select>");
+        // System.out.println(builder.toString());
 
         myDB.disConnect();
     }
