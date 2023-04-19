@@ -5,7 +5,7 @@ insertStudent.java    // java program that is called by php that just does the i
 jdbc_db.java // class (no main program) that has useful methods
 */
 
-public class availableMajors {
+public class viewInterviewInfo {
     // The main program that inserts a student
     public static void main(String[] args) throws SQLException {
         String Username = "sc133"; // Change to your own username
@@ -16,21 +16,17 @@ public class availableMajors {
         myDB.connect(Username, mysqlPassword);
         myDB.initDatabase();
 
+        // Parse input string to get student information
+        String ID = "";
+
+        // Read command line arguments
+        ID = args[0];
+
         // Execute Get
         StringBuilder builder = new StringBuilder();
-        String query1 = "SELECT DISTINCT MAJOR from STUDENTS;";
-
-        String[] majorParts = myDB.query(query1).split("\n");
-        // System.out.println([0]);majorParts
-        builder.append("<select>");
-        String majorValue = majorParts[0];
-        System.out.println(majorValue);
-        builder.append("<option value=\"" + majorValue + "\">" + majorValue + "</option>");
-
-        // builder.append("<select><option> " + myDB.query(query1) +
-        // "</option></select>");
-        builder.append("</select>");
-        // System.out.println(builder.toString());
+        String query1 = "SELECT JOBS.COMPANY_NAME, JOBS.JOB_TITLE, INTERVIEWERS.INTERVIEWER_NAME, INTERVIEWERS.INTERVIEW_TIME FROM INTERVIEWERS INNER JOIN JOBS ON INTERVIEWERS.JOB_ID = JOBS.JOB_ID AND INTERVIEWERS.JOB_ID = '" + ID + "'";
+        builder.append("<br> " + myDB.query(query1) + "<br>");
+        System.out.println(builder.toString());
 
         myDB.disConnect();
     }
