@@ -26,6 +26,7 @@ public class availableMajors {
         for (int i = 6; i < majorParts.length; i++) {
             builder.append("<option value=\"" + majorParts[i] + "\">" + majorParts[i] + "</option>");
         }
+        builder.append("<option value=\"ALL\">ALL</option>");
         builder.append("</select>");
         System.out.println(builder.toString());
 

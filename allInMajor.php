@@ -9,7 +9,6 @@
 
     // remove dangerous characters from command to protect web server
     $escaped_command1 = escapeshellcmd($command1);
-    echo "<p>command1: $command1 <p>"; 
     // run Query to get available majors
     system($escaped_command1); 
     ?>
@@ -22,10 +21,8 @@
 </html>
 
 <?php 
-
 if (isset($_POST['submit'])) 
 {
-    echo "CLICKED";
     // replace ' ' with '\ ' in the strings so they are treated as single command line args
     $MAJOR = escapeshellarg($_POST[MAJOR]);
 
