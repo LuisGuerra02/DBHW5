@@ -8,8 +8,8 @@ jdbc_db.java // class (no main program) that has useful methods
 public class availableMajors {
     // The main program that inserts a student
     public static void main(String[] args) throws SQLException {
-        String Username = "sc133"; // Change to your own username
-        String mysqlPassword = "ohfin1Om"; // Change to your own mysql Password
+        String Username = "laguerra"; // Change to your own username
+        String mysqlPassword = "aid9iuT5"; // Change to your own mysql Password
 
         // Connect to the database
         jdbc_db myDB = new jdbc_db();
@@ -20,11 +20,14 @@ public class availableMajors {
         StringBuilder builder = new StringBuilder();
         String query1 = "SELECT DISTINCT MAJOR from STUDENTS;";
 
-        String[] majorParts = myDB.query(query1).split("\n");
+        String[] majorParts = myDB.query(query1).split("<br>");
         // System.out.println([0]);majorParts
         builder.append("<select>");
         String majorValue = majorParts[0];
-        System.out.println(majorValue);
+        for (int i = 6; i < majorParts.length; i++) {
+            System.out.println("AHHHHHHHH");
+            System.out.println(majorParts[i]);
+        }
         builder.append("<option value=\"" + majorValue + "\">" + majorValue + "</option>");
 
         // builder.append("<select><option> " + myDB.query(query1) +
