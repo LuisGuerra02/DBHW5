@@ -22,8 +22,7 @@ public class availableMajors {
 
         String[] majorParts = myDB.query(query1).split("<br>");
         // System.out.println([0]);majorParts
-        builder.append("<select>");
-        String majorValue = majorParts[0];
+        builder.append("<select name= \"MAJOR\">");
         for (int i = 6; i < majorParts.length; i++) {
             builder.append("<option value=\"" + majorParts[i] + "\">" + majorParts[i] + "</option>");
         }
