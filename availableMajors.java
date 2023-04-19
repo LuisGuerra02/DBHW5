@@ -25,15 +25,10 @@ public class availableMajors {
         builder.append("<select>");
         String majorValue = majorParts[0];
         for (int i = 6; i < majorParts.length; i++) {
-            System.out.println("AHHHHHHHH");
-            System.out.println(majorParts[i]);
+            builder.append("<option value=\"" + majorParts[i] + "\">" + majorParts[i] + "</option>");
         }
-        builder.append("<option value=\"" + majorValue + "\">" + majorValue + "</option>");
-
-        // builder.append("<select><option> " + myDB.query(query1) +
-        // "</option></select>");
         builder.append("</select>");
-        // System.out.println(builder.toString());
+        System.out.println(builder.toString());
 
         myDB.disConnect();
     }
