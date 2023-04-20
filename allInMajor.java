@@ -25,7 +25,6 @@ public class allInMajor {
         // Execute Get
         StringBuilder builder = new StringBuilder();
         String query1;
-        System.out.println(MAJOR);
         if (!MAJOR.contains("ALL"))
             query1 = "SELECT * from STUDENTS WHERE MAJOR = '" + MAJOR + "'";
         else

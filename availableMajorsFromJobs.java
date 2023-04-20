@@ -5,7 +5,7 @@ insertStudent.java    // java program that is called by php that just does the i
 jdbc_db.java // class (no main program) that has useful methods
 */
 
-public class allJobInMajor {
+public class availableMajorsFromJobs {
     // The main program that inserts a student
     public static void main(String[] args) throws SQLException {
         String Username = "laguerra"; // Change to your own username
@@ -16,20 +16,18 @@ public class allJobInMajor {
         myDB.connect(Username, mysqlPassword);
         myDB.initDatabase();
 
-        // Parse input string to get student information
-        String MAJOR = "";
-
-        // Read command line arguments
-        MAJOR = args[0];
-
         // Execute Get
         StringBuilder builder = new StringBuilder();
-        String query1;
-        if (!MAJOR.contains("ALL"))
-            query1 = "SELECT * from JOBS WHERE MAJOR = '" + MAJOR + "'";
-        else
-            query1 = "SELECT * from JOBS";
-        builder.append("<br> " + myDB.query(query1) + "<br>");
+        String query1 = "SELECT DISTINCT MAJOR from JOBS;";
+
+        String[] majorParts = myDB.query(query1).split("<br>");
+        // System.out.println([0]);majorParts
+        builder.append("<select name= \"MAJOR\">");
+        for (int i = 6; i < majorParts.length; i++) {
+            builder.append("<option value=\"" + majorParts[i] + "\">" + majorParts[i] + "</option>");
+        }
+        builder.append("<option value=\"ALL\">ALL</option>");
+        builder.append("</select>");
         System.out.println(builder.toString());
 
         myDB.disConnect();

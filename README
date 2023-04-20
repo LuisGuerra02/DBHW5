@@ -13,6 +13,8 @@ chmod a+r insertApplication.php
 chmod +w insertApplication.php
 chmod a+r allInMajor.php
 chmod +w allInMajor.php
+chmod a+r allJobInMajor.php
+chmod +w allJobInMajor.php
 chmod a+r allInApplication.php
 chmod +w allInApplication.php
 chmod a+r viewInterviewInfo.php

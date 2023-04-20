@@ -8,8 +8,8 @@ jdbc_db.java // class (no main program) that has useful methods
 public class insertStudent {
    // The main program that inserts a student
    public static void main(String[] args) throws SQLException {
-      String Username = "sc133"; // Change to your own username
-      String mysqlPassword = "ohfin1Om"; // Change to your own mysql Password
+      String Username = "laguerra"; // Change to your own username
+      String mysqlPassword = "aid9iuT5"; // Change to your own mysql Password
 
       // Connect to the database
       jdbc_db myDB = new jdbc_db();
