@@ -5,7 +5,8 @@
 <form action="allInMajor.php" method="post">
     MAJOR: 
     <?php
-    $command1 = 'java -cp .:mysql-connector-java-5.1.40-bin.jar availableMajors ';
+    $value1 = 'major';
+    $command1 = 'java -cp .:mysql-connector-java-5.1.40-bin.jar availableByFromSelect ' . $value1;
 
     // remove dangerous characters from command to protect web server
     $escaped_command1 = escapeshellcmd($command1);

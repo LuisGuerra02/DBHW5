@@ -5,7 +5,8 @@
 <form action="allJobInMajor.php" method="post">
     MAJOR: 
     <?php
-    $command1 = 'java -cp .:mysql-connector-java-5.1.40-bin.jar availableMajorsFromJobs';
+    $value1 = 'desired_major';
+    $command1 = 'java -cp .:mysql-connector-java-5.1.40-bin.jar availableByFromSelect ' . $value1;
 
     // remove dangerous characters from command to protect web server
     $escaped_command1 = escapeshellcmd($command1);
@@ -24,9 +25,9 @@
 if (isset($_POST['submit'])) 
 {
     // replace ' ' with '\ ' in the strings so they are treated as single command line args
-    $MAJOR = escapeshellarg($_POST[MAJOR]);
+    $DESIRED_MAJOR = escapeshellarg($_POST[MAJOR]);
 
-    $command = 'java -cp .:mysql-connector-java-5.1.40-bin.jar allJobInMajor ' . $MAJOR;
+    $command = 'java -cp .:mysql-connector-java-5.1.40-bin.jar allJobInMajor ' . $DESIRED_MAJOR;
 
     // remove dangerous characters from command to protect web server
     $escaped_command = escapeshellcmd($command);

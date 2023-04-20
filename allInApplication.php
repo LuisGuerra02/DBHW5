@@ -4,22 +4,56 @@
 
 <form action="allInApplication.php" method="post">
     <p>View all applications:</p>
-    ALL:<input name="All-Applications" type="submit" value="Search All"><br><br>
+    <br>
+    ALL:<input name="All-Applications" type="submit" value="Search All">
 </form>
+
 <form action="allInApplication.php" method="post">
     <p>View all applications by major:</p>
-    MAJOR: <input type="text" name="MAJOR">
-    <input name="Applications-By-Major" type="submit" value="Search By Major"><br><br>
+    MAJOR: 
+    <?php
+    $value1 = 'major';
+    $command1 = 'java -cp .:mysql-connector-java-5.1.40-bin.jar availableByFromSelect ' . $value1;
+
+    // remove dangerous characters from command to protect web server
+    $escaped_command1 = escapeshellcmd($command1);
+    // run Query to get available majors
+    system($escaped_command1); 
+    ?>
+    <br>
+    <input name="Applications-By-Major" type="submit" value="Search By Major">
 </form>
+
 <form action="allInApplication.php" method="post">
     <p>View all applications by student:</p>
-    STUDENT: <input type="text" name="STUDENT">
-    <input name="Applications-By-Student" type="submit" value="Search By Student"><br><br>
+    MAJOR: 
+    <?php
+    $value2 = 'student';
+    $command2 = 'java -cp .:mysql-connector-java-5.1.40-bin.jar availableByFromSelect ' . $value2;
+
+    // remove dangerous characters from command to protect web server
+    $escaped_command2 = escapeshellcmd($command2);
+    // run Query to get available majors
+    system($escaped_command2); 
+    ?>
+    <br>
+    <input name="Applications-By-Student" type="submit" value="Search By Student">
 </form>
+
 <form action="allInApplication.php" method="post">
     <p>View all applications by job:</p>   
-    JOB: <input type="text" name="JOB">
-    <input name="Applications-By-Job" type="submit" value="Search By Job"><br><br>
+    MAJOR: 
+    <?php
+    $value3 = 'job';
+    $command3 = 'java -cp .:mysql-connector-java-5.1.40-bin.jar availableByFromSelect ' . $value3;
+
+    // remove dangerous characters from command to protect web server
+    $escaped_command3 = escapeshellcmd($command3);
+    // run Query to get available majors
+    system($escaped_command3); 
+    ?>
+    <br>
+    <input name="Applications-By-Job" type="submit" value="Search By Job">
 </form>
 <br><br>
 
