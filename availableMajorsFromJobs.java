@@ -18,7 +18,7 @@ public class availableMajorsFromJobs {
 
         // Execute Get
         StringBuilder builder = new StringBuilder();
-        String query1 = "SELECT DISTINCT MAJOR from JOBS;";
+        String query1 = "SELECT DISTINCT DESIRED_MAJOR from JOBS;";
 
         String[] majorParts = myDB.query(query1).split("<br>");
         // System.out.println([0]);majorParts

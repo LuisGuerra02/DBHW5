@@ -26,7 +26,7 @@ public class allJobInMajor {
         StringBuilder builder = new StringBuilder();
         String query1;
         if (!MAJOR.contains("ALL"))
-            query1 = "SELECT * from JOBS WHERE MAJOR = '" + MAJOR + "'";
+            query1 = "SELECT * from JOBS WHERE DESIRED_MAJOR = '" + MAJOR + "'";
         else
             query1 = "SELECT * from JOBS";
         builder.append("<br> " + myDB.query(query1) + "<br>");
