@@ -4,11 +4,13 @@
 
 <form action="allInApplication.php" method="post">
     <p>View all applications:</p>
+    ALL:
     <br>
-    ALL:<input name="All-Applications" type="submit" value="Search All">
+    <input name="All-Applications" type="submit" value="Search All">
 </form>
 
 <form action="allInApplication.php" method="post">
+    <br><br>
     <p>View all applications by major:</p>
     MAJOR: 
     <?php
@@ -22,9 +24,11 @@
     ?>
     <br>
     <input name="Applications-By-Major" type="submit" value="Search By Major">
+    <br>
 </form>
 
 <form action="allInApplication.php" method="post">
+    <br><br>
     <p>View all applications by student:</p>
     MAJOR: 
     <?php
@@ -38,9 +42,11 @@
     ?>
     <br>
     <input name="Applications-By-Student" type="submit" value="Search By Student">
+    <br>
 </form>
 
 <form action="allInApplication.php" method="post">
+    <br><br>
     <p>View all applications by job:</p>   
     MAJOR: 
     <?php
@@ -54,6 +60,7 @@
     ?>
     <br>
     <input name="Applications-By-Job" type="submit" value="Search By Job">
+    <br>
 </form>
 <br><br>
 
