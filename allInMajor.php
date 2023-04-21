@@ -1,5 +1,6 @@
 <html>
 <body>
+<a href="http://www.csce.uark.edu/~laguerra/project_java/MainPage.html">HOME PAGE</a>
 <h3>Enter Which Majors Students you would like to see:</h3>
 
 <form action="allInMajor.php" method="post">

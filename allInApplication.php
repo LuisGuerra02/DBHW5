@@ -1,5 +1,6 @@
 <html>
 <body>
+<a href="http://www.csce.uark.edu/~laguerra/project_java/MainPage.html">HOME PAGE</a>
 <h3>Choose one of the following ways to view applications by and hit the corresponding submit button:</h3>
 
 <form action="allInApplication.php" method="post">

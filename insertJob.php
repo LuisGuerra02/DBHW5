@@ -1,5 +1,6 @@
 <html>
 <body>
+<a href="http://www.csce.uark.edu/~laguerra/project_java/MainPage.html">HOME PAGE</a>
 <h3>Enter information the job below:</h3>
 
 <form action="insertJob.php" method="post">

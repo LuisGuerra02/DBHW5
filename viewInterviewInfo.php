@@ -1,5 +1,6 @@
 <html>
 <body>
+<a href="http://www.csce.uark.edu/~laguerra/project_java/MainPage.html">HOME PAGE</a>
 <h3>Enter the job ID for information about the interviews for that job:</h3>
 
 <form action="viewInterviewInfo.php" method="post">
