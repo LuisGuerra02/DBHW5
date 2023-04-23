@@ -4,7 +4,7 @@
 <h3>Enter Which Major you would like to see jobs for:</h3>
 
 <form action="allJobInMajor.php" method="post">
-    MAJOR: 
+    Desired major: 
     <?php
     $value1 = 'desired_major';
     $command1 = 'java -cp .:mysql-connector-java-5.1.40-bin.jar availableByFromSelect ' . $value1;
@@ -26,7 +26,7 @@
 if (isset($_POST['submit'])) 
 {
     // replace ' ' with '\ ' in the strings so they are treated as single command line args
-    $DESIRED_MAJOR = escapeshellarg($_POST[MAJOR]);
+    $DESIRED_MAJOR = escapeshellarg($_POST[DESIRED_MAJOR]);
 
     $command = 'java -cp .:mysql-connector-java-5.1.40-bin.jar allJobInMajor ' . $DESIRED_MAJOR;
 
