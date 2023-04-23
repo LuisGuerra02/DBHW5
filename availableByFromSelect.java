@@ -26,11 +26,11 @@ public class availableByFromSelect {
         String query2 = "SELECT DISTINCT STUDENT_NAME from STUDENTS;";
         String query3 = "SELECT DISTINCT JOB_TITLE from JOBS;";
         String query4 = "SELECT DISTINCT JOB_ID from JOBS;";
+        String query5 = "SELECT DISTINCT STUDENT_ID from STUDENTS;";
 
         switch (VALUE) {
             case "major":
                 String[] majorParts = myDB.query(query1).split("<br>");
-                // System.out.println([0]);majorParts
                 builder.append("<select name= \"MAJOR\">");
                 for (int i = 6; i < majorParts.length; i++) {
                     builder.append("<option value=\"" + majorParts[i] + "\">" + majorParts[i] + "</option>");
@@ -41,45 +41,47 @@ public class availableByFromSelect {
                 break;
             case "student":
                 String[] studentParts = myDB.query(query2).split("<br>");
-                // System.out.println([0]);majorParts
                 builder.append("<select name= \"STUDENT\">");
                 for (int i = 6; i < studentParts.length; i++) {
                     builder.append("<option value=\"" + studentParts[i] + "\">" + studentParts[i] + "</option>");
                 }
-                builder.append("<option value=\" ALL \"> ALL </option>");
                 builder.append("</select>");
                 System.out.println(builder.toString());
                 break;
             case "job":
                 String[] jobParts = myDB.query(query3).split("<br>");
-                // System.out.println([0]);majorParts
                 builder.append("<select name= \"JOB\">");
                 for (int i = 6; i < jobParts.length; i++) {
                     builder.append("<option value=\"" + jobParts[i] + "\">" + jobParts[i] + "</option>");
                 }
-                builder.append("<option value=\" ALL \"> ALL </option>");
                 builder.append("</select>");
                 System.out.println(builder.toString());
                 break;
             case "id":
                 String[] idParts = myDB.query(query4).split("<br>");
-                // System.out.println([0]);majorParts
                 builder.append("<select name= \"JOB_ID\">");
                 for (int i = 6; i < idParts.length; i++) {
                     builder.append("<option value=\"" + idParts[i] + "\">" + idParts[i] + "</option>");
                 }
-                builder.append("<option value=\" ALL \"> ALL </option>");
                 builder.append("</select>");
                 System.out.println(builder.toString());
                 break;
             case "desired_major":
                 String[] desiredParts = myDB.query(query0).split("<br>");
-                // System.out.println([0]);majorParts
                 builder.append("<select name= \"DESIRED_MAJOR\">");
                 for (int i = 6; i < desiredParts.length; i++) {
                     builder.append("<option value=\"" + desiredParts[i] + "\">" + desiredParts[i] + "</option>");
                 }
                 builder.append("<option value=\" ALL \"> ALL </option>");
+                builder.append("</select>");
+                System.out.println(builder.toString());
+                break;
+            case "studentid":
+                String[] studentIDParts = myDB.query(query5).split("<br>");
+                builder.append("<select name= \"STUDENT_ID\">");
+                for (int i = 6; i < studentIDParts.length; i++) {
+                    builder.append("<option value=\"" + studentIDParts[i] + "\">" + studentIDParts[i] + "</option>");
+                }
                 builder.append("</select>");
                 System.out.println(builder.toString());
                 break;

@@ -1,6 +1,6 @@
 <html>
 <body>
-<a href="http://www.csce.uark.edu/~laguerra/project_java/MainPage.html">HOME PAGE</a>
+<a href="http://www.csce.uark.edu/~sc133/project_java/MainPage.html">HOME PAGE</a>
 <h3>Enter information the job below:</h3>
 
 <form action="insertJob.php" method="post">
@@ -30,8 +30,6 @@ if (isset($_POST['submit']))
 
     // remove dangerous characters from command to protect web server
     $escaped_command = escapeshellcmd($command);
-    echo "<p>command: $command <p>"; 
-    // run insertJob.exe
     system($escaped_command);           
 }
 ?>

@@ -1,6 +1,6 @@
 <html>
 <body>
-<a href="http://www.csce.uark.edu/~laguerra/project_java/MainPage.html">HOME PAGE</a>
+<a href="http://www.csce.uark.edu/~sc133/project_java/MainPage.html">HOME PAGE</a>
 <h3>Choose one of the following ways to view applications by and hit the corresponding submit button:</h3>
 
 <form action="allInApplication.php" method="post">
@@ -31,7 +31,7 @@
 <form action="allInApplication.php" method="post">
     <br><br>
     <p>View all applications by student:</p>
-    MAJOR: 
+    STUDENT: 
     <?php
     $value2 = 'student';
     $command2 = 'java -cp .:mysql-connector-java-5.1.40-bin.jar availableByFromSelect ' . $value2;
@@ -49,7 +49,7 @@
 <form action="allInApplication.php" method="post">
     <br><br>
     <p>View all applications by job:</p>   
-    MAJOR: 
+    JOB: 
     <?php
     $value3 = 'job';
     $command3 = 'java -cp .:mysql-connector-java-5.1.40-bin.jar availableByFromSelect ' . $value3;
@@ -79,7 +79,6 @@ if (isset($_POST['All-Applications']))
     // remove dangerous characters from command to protect web server
     $escaped_command = escapeshellcmd($command);
     echo "<p>command: $command <p>"; 
-    // run insertStudent.exe
     system($escaped_command);           
 }
 
@@ -94,7 +93,6 @@ if (isset($_POST['Applications-By-Major']))
     // remove dangerous characters from command to protect web server
     $escaped_command = escapeshellcmd($command);
     echo "<p>command: $command <p>"; 
-    // run insertStudent.exe
     system($escaped_command);           
 }
 
@@ -109,7 +107,6 @@ if (isset($_POST['Applications-By-Student']))
     // remove dangerous characters from command to protect web server
     $escaped_command = escapeshellcmd($command);
     echo "<p>command: $command <p>"; 
-    // run insertStudent.exe
     system($escaped_command);           
 }
 
@@ -124,7 +121,6 @@ if (isset($_POST['Applications-By-Job']))
     // remove dangerous characters from command to protect web server
     $escaped_command = escapeshellcmd($command);
     echo "<p>command: $command <p>"; 
-    // run insertStudent.exe
     system($escaped_command);           
 }
 ?>

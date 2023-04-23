@@ -19,7 +19,6 @@ public class insertJob {
       // For debugging purposes: Show the database before the insert
       StringBuilder builder = new StringBuilder();
       String query1 = "SELECT * from JOBS";
-      builder.append("<br> Table JOBS before:" + myDB.query(query1) + "<br>");
 
       // Parse input string to get job information
       String JOB_ID = "";
@@ -35,12 +34,11 @@ public class insertJob {
       SALARY = args[3];
       DESIRED_MAJOR = args[4];
 
-      // Insert the new student
       String input = "'" + JOB_ID + "','" + COMPANY_NAME + "','" + JOB_TITLE + "','" + SALARY + "','" + DESIRED_MAJOR + "'";
       myDB.insert("JOBS", input); // insert new job
 
       // For debugging purposes: Show the database after the insert
-      builder.append("<br><br><br> Table JOBS after:" + myDB.query(query1));
+      builder.append(myDB.query(query1));
       System.out.println(builder.toString());
 
       myDB.disConnect();

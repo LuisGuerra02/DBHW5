@@ -16,7 +16,6 @@ public class viewInterviewInfo {
         myDB.connect(Username, mysqlPassword);
         myDB.initDatabase();
 
-        // Parse input string to get student information
         String ID = "";
 
         // Read command line arguments
@@ -25,7 +24,7 @@ public class viewInterviewInfo {
         // Execute Get
         StringBuilder builder = new StringBuilder();
         String query1 = "SELECT JOBS.COMPANY_NAME, JOBS.JOB_TITLE, INTERVIEWERS.INTERVIEWER_NAME, INTERVIEWERS.INTERVIEW_TIME FROM INTERVIEWERS INNER JOIN JOBS ON INTERVIEWERS.JOB_ID = JOBS.JOB_ID AND INTERVIEWERS.JOB_ID = '" + ID + "'";
-        builder.append("<br> " + myDB.query(query1) + "<br>");
+        builder.append(myDB.query(query1));
         System.out.println(builder.toString());
 
         myDB.disConnect();

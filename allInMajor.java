@@ -16,7 +16,6 @@ public class allInMajor {
         myDB.connect(Username, mysqlPassword);
         myDB.initDatabase();
 
-        // Parse input string to get student information
         String MAJOR = "";
 
         // Read command line arguments
@@ -29,7 +28,7 @@ public class allInMajor {
             query1 = "SELECT * from STUDENTS WHERE MAJOR = '" + MAJOR + "'";
         else
             query1 = "SELECT * from STUDENTS";
-        builder.append("<br> " + myDB.query(query1) + "<br>");
+        builder.append(myDB.query(query1));
         System.out.println(builder.toString());
 
         myDB.disConnect();

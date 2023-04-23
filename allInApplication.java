@@ -16,7 +16,6 @@ public class allInApplication {
         myDB.connect(Username, mysqlPassword);
         myDB.initDatabase();
 
-        // Parse input string to get student information
         String VALUE = "";
         String BY = "";
         String query = "";
@@ -30,22 +29,22 @@ public class allInApplication {
         switch (VALUE) {
             case "all":
                 query = "SELECT s.STUDENT_NAME, j.COMPANY_NAME, j.SALARY,s.MAJOR FROM STUDENTS s, JOBS j, APPLICATIONS a WHERE a.STUDENT_ID = s.STUDENT_ID AND a.JOB_ID = j.JOB_ID;";
-                builder.append("<br> " + myDB.query(query) + "<br>");
+                builder.append(myDB.query(query));
                 System.out.println(builder.toString());
                 break;
             case "major":
                 query = "SELECT s.STUDENT_NAME, j.COMPANY_NAME, j.SALARY,s.MAJOR FROM STUDENTS s, JOBS j, APPLICATIONS a WHERE a.STUDENT_ID = s.STUDENT_ID AND a.JOB_ID = j.JOB_ID AND s.MAJOR = '" + BY + "'";
-                builder.append("<br> " + myDB.query(query) + "<br>");
+                builder.append(myDB.query(query));
                 System.out.println(builder.toString());
                 break;
             case "student":
                 query = "SELECT s.STUDENT_NAME, j.COMPANY_NAME, j.SALARY,s.MAJOR FROM STUDENTS s, JOBS j, APPLICATIONS a WHERE a.STUDENT_ID = s.STUDENT_ID AND a.JOB_ID = j.JOB_ID AND s.STUDENT_NAME = '" + BY + "'";
-                builder.append("<br> " + myDB.query(query) + "<br>");
+                builder.append(myDB.query(query));
                 System.out.println(builder.toString());
                 break;
             case "job":
                 query = "SELECT s.STUDENT_NAME, j.COMPANY_NAME, j.SALARY,s.MAJOR FROM STUDENTS s, JOBS j, APPLICATIONS a WHERE a.STUDENT_ID = s.STUDENT_ID AND a.JOB_ID = j.JOB_ID AND j.JOB_TITLE = '" + BY + "'";
-                builder.append("<br> " + myDB.query(query) + "<br>");
+                builder.append(myDB.query(query));
                 System.out.println(builder.toString());
                 break;
             default:
