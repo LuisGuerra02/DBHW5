@@ -8,8 +8,8 @@ jdbc_db.java // class (no main program) that has useful methods
 public class allInApplication {
     // The main program that inserts a student
     public static void main(String[] args) throws SQLException {
-        String Username = "sc133"; // Change to your own username
-        String mysqlPassword = "ohfin1Om"; // Change to your own mysql Password
+        String Username = "laguerra"; // Change to your own username
+        String mysqlPassword = "aid9iuT5"; // Change to your own mysql Password
 
         // Connect to the database
         jdbc_db myDB = new jdbc_db();
@@ -25,6 +25,10 @@ public class allInApplication {
         VALUE = args[0];
         BY = args[1];
 
+        if (BY.contains("ALL")) {
+            VALUE = "all";
+        }
+
         // Execute Get
         StringBuilder builder = new StringBuilder();
         switch (VALUE) {
@@ -34,17 +38,20 @@ public class allInApplication {
                 System.out.println(builder.toString());
                 break;
             case "major":
-                query = "SELECT s.STUDENT_NAME, j.COMPANY_NAME, j.SALARY,s.MAJOR FROM STUDENTS s, JOBS j, APPLICATIONS a WHERE a.STUDENT_ID = s.STUDENT_ID AND a.JOB_ID = j.JOB_ID AND s.MAJOR = '" + BY + "'";
+                query = "SELECT s.STUDENT_NAME, j.COMPANY_NAME, j.SALARY,s.MAJOR FROM STUDENTS s, JOBS j, APPLICATIONS a WHERE a.STUDENT_ID = s.STUDENT_ID AND a.JOB_ID = j.JOB_ID AND s.MAJOR = '"
+                        + BY + "'";
                 builder.append("<br> " + myDB.query(query) + "<br>");
                 System.out.println(builder.toString());
                 break;
             case "student":
-                query = "SELECT s.STUDENT_NAME, j.COMPANY_NAME, j.SALARY,s.MAJOR FROM STUDENTS s, JOBS j, APPLICATIONS a WHERE a.STUDENT_ID = s.STUDENT_ID AND a.JOB_ID = j.JOB_ID AND s.STUDENT_NAME = '" + BY + "'";
+                query = "SELECT s.STUDENT_NAME, j.COMPANY_NAME, j.SALARY,s.MAJOR FROM STUDENTS s, JOBS j, APPLICATIONS a WHERE a.STUDENT_ID = s.STUDENT_ID AND a.JOB_ID = j.JOB_ID AND s.STUDENT_NAME = '"
+                        + BY + "'";
                 builder.append("<br> " + myDB.query(query) + "<br>");
                 System.out.println(builder.toString());
                 break;
             case "job":
-                query = "SELECT s.STUDENT_NAME, j.COMPANY_NAME, j.SALARY,s.MAJOR FROM STUDENTS s, JOBS j, APPLICATIONS a WHERE a.STUDENT_ID = s.STUDENT_ID AND a.JOB_ID = j.JOB_ID AND j.JOB_TITLE = '" + BY + "'";
+                query = "SELECT s.STUDENT_NAME, j.COMPANY_NAME, j.SALARY,s.MAJOR FROM STUDENTS s, JOBS j, APPLICATIONS a WHERE a.STUDENT_ID = s.STUDENT_ID AND a.JOB_ID = j.JOB_ID AND j.JOB_TITLE = '"
+                        + BY + "'";
                 builder.append("<br> " + myDB.query(query) + "<br>");
                 System.out.println(builder.toString());
                 break;
