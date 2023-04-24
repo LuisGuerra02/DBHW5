@@ -2,9 +2,12 @@ Once in turing, use:
 
 run the following:
 
+cd
 cd public_html/project_java
 chmod u+r+x build_project.sh
 chmod u+r+x hw4.sh
 ./build_project.sh
+
+Use hw4.sh to refer to the SQL population/schema
 
 Open pages links using http://www.csce.uark.edu/~sc133/project_java/MainPage.html

@@ -19,7 +19,6 @@ public class insertStudent {
       // For debugging purposes: Show the database before the insert
       StringBuilder builder = new StringBuilder();
       String query1 = "SELECT * from STUDENTS";
-      builder.append("<br> Table STUDENTS before:" + myDB.query(query1) + "<br>");
 
       // Parse input string to get student information
       String STUDENT_ID = "";
@@ -36,7 +35,7 @@ public class insertStudent {
       myDB.insert("STUDENTS", input); // insert new student
 
       // For debugging purposes: Show the database after the insert
-      builder.append("<br><br><br> Table STUDENTS after:" + myDB.query(query1));
+      builder.append(myDB.query(query1));
       System.out.println(builder.toString());
 
       myDB.disConnect();

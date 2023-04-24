@@ -1,6 +1,6 @@
 <html>
 <body>
-<a href="http://www.csce.uark.edu/~laguerra/project_java/MainPage.html">HOME PAGE</a>
+<a href="http://www.csce.uark.edu/~sc133/project_java/MainPage.html">HOME PAGE</a>
 <h3>Enter the job ID for information about the interviews for that job:</h3>
 
 <form action="viewInterviewInfo.php" method="post">
@@ -31,8 +31,6 @@ if (isset($_POST['submit']))
 
     // remove dangerous characters from command to protect web server
     $escaped_command = escapeshellcmd($command);
-    echo "<p>command: $command <p>"; 
-    // run insertStudent.exe
     system($escaped_command);           
 }
 ?>

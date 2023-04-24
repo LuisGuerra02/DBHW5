@@ -17,10 +17,8 @@ public class insertApplication {
       myDB.initDatabase();
 
       // For debugging purposes: Show the database before the insert
-      StringBuilder error = new StringBuilder();
       StringBuilder builder = new StringBuilder();
       String query1 = "SELECT * from APPLICATIONS";
-      builder.append("<br> Table APPLICATIONS before:" + myDB.query(query1) + "<br>");
 
       // Parse input string to get application information
       String STUDENT_ID = "";
@@ -32,17 +30,10 @@ public class insertApplication {
 
       // Insert the new application
       String input = "'" + STUDENT_ID + "','" + JOB_ID + "'";
-      if(!myDB.insert("APPLICATIONS", input))
-      {
-        error.append("The given ID's are not in the database or already in use for an application, try again!");
-        System.out.println(error.toString());
-      }
-      else
-      {
-        // For debugging purposes: Show the database after the insert
-        builder.append("<br><br><br> Table APPLICATIONS after:" + myDB.query(query1));
-        System.out.println(builder.toString());
-      }
+      myDB.insert("APPLICATIONS", input);
+
+      builder.append(myDB.query(query1));
+      System.out.println(builder.toString());
 
       myDB.disConnect();
    }

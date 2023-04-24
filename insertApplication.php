@@ -1,11 +1,30 @@
 <html>
 <body>
-<a href="http://www.csce.uark.edu/~laguerra/project_java/MainPage.html">HOME PAGE</a>
+<a href="http://www.csce.uark.edu/~sc133/project_java/MainPage.html">HOME PAGE</a>
 <h3>Enter information the application below:</h3>
 
 <form action="insertApplication.php" method="post">
-    STUDENT_ID: <input type="text" name="STUDENT_ID"><br>
-    JOB_ID: <input type="text" name="JOB_ID"><br>
+    JOB ID: 
+    <?php
+    $value1 = 'id';
+    $command1 = 'java -cp .:mysql-connector-java-5.1.40-bin.jar availableByFromSelect ' . $value1;
+
+    // remove dangerous characters from command to protect web server
+    $escaped_command1 = escapeshellcmd($command1);
+    // run Query to get available majors
+    system($escaped_command1); 
+    ?>
+    STUDENT ID: 
+    <?php
+    $value2 = 'studentid';
+    $command2 = 'java -cp .:mysql-connector-java-5.1.40-bin.jar availableByFromSelect ' . $value2;
+
+    // remove dangerous characters from command to protect web server
+    $escaped_command2 = escapeshellcmd($command2);
+    // run Query to get available majors
+    system($escaped_command2); 
+    ?>
+    <br>
     <input name="submit" type="submit" >
 </form>
 <br><br>
@@ -24,8 +43,6 @@ if (isset($_POST['submit']))
 
     // remove dangerous characters from command to protect web server
     $escaped_command = escapeshellcmd($command);
-    echo "<p>command: $command <p>"; 
-    // run insertApplication.exe
     system($escaped_command);           
 }
 ?>

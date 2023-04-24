@@ -16,7 +16,6 @@ public class viewInterviewInfo {
         myDB.connect(Username, mysqlPassword);
         myDB.initDatabase();
 
-        // Parse input string to get student information
         String ID = "";
 
         // Read command line arguments
