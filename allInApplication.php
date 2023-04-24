@@ -78,7 +78,6 @@ if (isset($_POST['All-Applications']))
 
     // remove dangerous characters from command to protect web server
     $escaped_command = escapeshellcmd($command);
-    echo "<p>command: $command <p>"; 
     system($escaped_command);           
 }
 
@@ -92,7 +91,6 @@ if (isset($_POST['Applications-By-Major']))
 
     // remove dangerous characters from command to protect web server
     $escaped_command = escapeshellcmd($command);
-    echo "<p>command: $command <p>"; 
     system($escaped_command);           
 }
 
@@ -106,7 +104,6 @@ if (isset($_POST['Applications-By-Student']))
 
     // remove dangerous characters from command to protect web server
     $escaped_command = escapeshellcmd($command);
-    echo "<p>command: $command <p>"; 
     system($escaped_command);           
 }
 
@@ -120,7 +117,6 @@ if (isset($_POST['Applications-By-Job']))
 
     // remove dangerous characters from command to protect web server
     $escaped_command = escapeshellcmd($command);
-    echo "<p>command: $command <p>"; 
     system($escaped_command);           
 }
 ?>

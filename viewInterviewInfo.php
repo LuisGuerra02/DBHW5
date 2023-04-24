@@ -4,7 +4,7 @@
 <h3>Enter the job ID for information about the interviews for that job:</h3>
 
 <form action="viewInterviewInfo.php" method="post">
-    MAJOR: 
+    JOB ID: 
     <?php
     $value1 = 'id';
     $command1 = 'java -cp .:mysql-connector-java-5.1.40-bin.jar availableByFromSelect ' . $value1;
