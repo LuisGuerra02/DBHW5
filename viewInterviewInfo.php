@@ -1,5 +1,5 @@
 <html>
-<body>
+<body style="background-color:rgb(98, 165, 232);">
 <a href="http://www.csce.uark.edu/~sc133/project_java/MainPage.html">HOME PAGE</a>
 <h3>Enter the job ID for information about the interviews for that job:</h3>
 
